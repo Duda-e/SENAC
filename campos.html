@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Completo</title>
+    <style>
+        /* Estilo geral */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .checkbox-group,
+        .radio-group {
+            margin-bottom: 15px;
+        }
+
+        .checkbox-group label,
+        .radio-group label {
+            font-weight: normal;
+            margin-right: 15px;
+        }
+
+        input[type="submit"],
+        button {
+            background-color: #f172ad;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover,
+        button:hover {
+            background-color: #f591bf;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            input[type="submit"],
+            button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Formulário Completo</h2>
+        <form action="processar_formulario.php" method="POST">
+            <!-- Campo de texto -->
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+            <!-- Campo de e-mail -->
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+
+            <!-- Campo de senha -->
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+
+            <!-- Campo de número -->
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" name="idade" placeholder="Digite sua idade" required>
+
+            <!-- Textarea -->
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Digite sua mensagem"></textarea>
+
+            <!-- Radio buttons -->
+            <div class="radio-group">
+                <label>Gênero:</label>
+                <label><input type="radio" name="genero" value="masculino" required> Masculino</label>
+                <label><input type="radio" name="genero" value="feminino"> Feminino</label>
+                <label><input type="radio" name="genero" value="outro"> Outro</label>
+            </div>
+
+            <!-- Checkboxes -->
+            <div class="checkbox-group">
+                <label>Interesses:</label>
+                <label><input type="checkbox" name="interesses[]" value="tecnologia"> Tecnologia</label>
+                <label><input type="checkbox" name="interesses[]" value="esportes"> Esportes</label>
+                <label><input type="checkbox" name="interesses[]" value="musica"> Música</label>
+            </div>
+
+            <!-- Select -->
+            <label for="pais">País:</label>
+            <select id="pais" name="pais" required>
+                <option value="">Selecione seu país</option>
+                <option value="brasil">Brasil</option>
+                <option value="eua">Estados Unidos</option>
+                <option value="canada">Canadá</option>
+                <option value="japao">Japão</option>
+            </select>
+
+            <!-- Botão de envio -->
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+</body>
+</html>
